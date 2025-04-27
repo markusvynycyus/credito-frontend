@@ -1,0 +1,43 @@
+<div class="container">
+    <h2>Consulta de Créditos</h2>
+  
+    <div class="form-group">
+      <label for="tipoBusca">Buscar por:</label>
+      <select id="tipoBusca" [(ngModel)]="tipoBusca">
+        <option value="nfse">Número da NFS-e</option>
+        <option value="credito">Número do Crédito</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="numeroBusca">Número:</label>
+      <input
+        id="numeroBusca"
+        type="text"
+        [(ngModel)]="numeroBusca"
+        placeholder="Digite o número"
+      />
+    </div>
+  
+    <button (click)="buscar()">Buscar</button>
+
+    
+  
+    <div *ngIf="creditos.length > 0" class="creditos-lista">
+      <h3>Resultados:</h3>
+      <div class="credito-card" *ngFor="let credito of creditos">
+        <div><strong>Nº Crédito:</strong> {{ credito.numeroCredito }}</div>
+        <div><strong>Nº NFS-e:</strong> {{ credito.numeroNfse }}</div>
+        <div><strong>Data:</strong> {{ credito.dataConstituicao }}</div>
+        <div><strong>ISSQN:</strong> {{ credito.valorIssqn | currency:'BRL' }}</div>
+        <div><strong>Tipo:</strong> {{ credito.tipoCredito }}</div>
+        <div><strong>Simples Nacional:</strong> {{ credito.simplesNacional ? 'Sim' : 'Não' }}</div>
+        <div><strong>Alíquota:</strong> {{ credito.aliquota }}%</div>
+        <div><strong>Faturado:</strong> {{ credito.valorFaturado | currency:'BRL' }}</div>
+        <div><strong>Dedução:</strong> {{ credito.valorDeducao | currency:'BRL' }}</div>
+        <div><strong>Base Cálculo:</strong> {{ credito.baseCalculo | currency:'BRL' }}</div>
+      </div>
+    </div>
+  
+    <p *ngIf="creditos.length === 0 && numeroBusca">Nenhum resultado encontrado.</p>
+  </div>

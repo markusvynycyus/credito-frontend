@@ -1,0 +1,94 @@
+.erro {
+  color: red;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1976d2;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  
+  input, select {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus, select:focus {
+    border-color: #1976d2;
+    outline: none;
+  }
+  
+  button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #125ea9;
+  }
+  
+  .creditos-lista {
+    margin-top: 2rem;
+  }
+  
+  .credito-card {
+    background-color: #f1f5f9;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .credito-card div {
+    font-size: 0.95rem;
+    color: #374151;
+  }
+  
+  .credito-card strong {
+    color: #111827;
+  }
+  
+  @media (max-width: 600px) {
+    .credito-card {
+      grid-template-columns: 1fr;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
