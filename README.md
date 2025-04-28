@@ -1,6 +1,3 @@
-Aqui está a versão adaptada e integrada do seu README.md, mantendo exatamente o mesmo estilo que você forneceu, apenas aprimorando o conteúdo técnico:
-
-```markdown
 # 💻 Frontend - Sistema de Consulta de Créditos/NFSe
 
 ![Angular](https://img.shields.io/badge/Angular-17-DD0031?style=for-the-badge&logo=angular&logoColor=white)
