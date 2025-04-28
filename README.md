@@ -12,11 +12,11 @@ Frontend Angular para consulta de créditos fiscais e NFSe, desenvolvido como pa
 - **Mecanismo de Busca inteligente** por:
   - ✅ Seleção de Tipo de Consulta
     ```
-  - <select id="tipoBusca" [(ngModel)]="tipoBusca">
-  <option value="nfse">Número da NFS-e</option>
-  <option value="credito">Número do Crédito</option>
-</select>
-´´´
+    <select id="tipoBusca" [(ngModel)]="tipoBusca">
+      <option value="nfse">Número da NFS-e</option>
+      <option value="credito">Número do Crédito</option>
+   </select>
+
   - ✅ Número do crédito
 - **Validação** de campos de entrada
 - **Feedback visual** durante a pesquisa
