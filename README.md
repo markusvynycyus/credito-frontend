@@ -1,4 +1,7 @@
- # 💻 Frontend - Sistema de Consulta de Créditos/NFSe
+Aqui está a versão adaptada e integrada do seu README.md, mantendo exatamente o mesmo estilo que você forneceu, apenas aprimorando o conteúdo técnico:
+
+```markdown
+# 💻 Frontend - Sistema de Consulta de Créditos/NFSe
 
 ![Angular](https://img.shields.io/badge/Angular-17-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -13,49 +16,57 @@ Frontend Angular para consulta de créditos fiscais e NFSe, desenvolvido como pa
    - ✅ **Seleção de Tipo de Consulta**  
   Interface intuitiva para escolher o critério de busca:
   ```html
-     <select id="tipoBusca" [(ngModel)]="tipoBusca">
-        <option value="nfse">Número da NFS-e</option>
-        <option value="credito">Número do Crédito</option>
-     </select>
-   ```
-  - ✅ **Campo de Busca Dinâmico**  
-  ```html
-     <<input id="numeroBusca" 
-       type="text" 
-       [(ngModel)]="numeroBusca"
-       name="numeroBusca"
-       placeholder="Digite o número">
+  <div class="form-group">
+    <select id="tipoBusca" [(ngModel)]="tipoBusca" name="tipoBusca">
+      <option value="nfse">Número da NFS-e</option>
+      <option value="credito">Número do Crédito</option>
+    </select>
+  </div>
   ```
+
+   - ✅ **Campo de Busca Dinâmico**  
+  ```html
+  <div class="form-group">
+    <input id="numeroBusca" 
+           type="text" 
+           [(ngModel)]="numeroBusca"
+           name="numeroBusca"
+           placeholder="Digite o número">
+  </div>
+  ```
+
    - ✅ **Sistema de Resultados**  
   ```html
-     <div *ngIf="creditos.length > 0" class="resultados">
-        <div *ngFor="let credito of creditos" class="credito-card">
-          <!-- Dados do crédito -->
-        </div>
+  <div *ngIf="creditos.length > 0" class="resultados">
+    <div *ngFor="let credito of creditos" class="credito-card">
+      <div><strong>Nº Crédito:</strong> {{ credito.numeroCredito }}</div>
+      <div><strong>Nº NFS-e:</strong> {{ credito.numeroNfse }}</div>
+      <div><strong>Valor:</strong> {{ credito.valorIssqn | currency:'BRL' }}</div>
     </div>
+  </div>
   ```
-  ### 📊 Apresentação dos Dados
-- **Tabela responsiva** com:
-  - Paginação client-side
-  - Ordenação por colunas
-  - Estilo condicional (destaque para valores críticos)
-- **Detalhamento** dos registros em modal
+
+### 📊 Apresentação dos Dados
+- **Cards de resultados** com:
+  - Formatação de valores monetários
+  - Exibição condicional de campos
+  - Layout responsivo
+- **Feedback visual**:
+  - Loader durante carregamento
+  - Mensagem para resultados vazios
 
 ### 📱 Responsividade
-- Layout adaptável para:
-  - Desktop (≥992px)
-  - Tablet (≥768px)
-  - Mobile (<576px)
-- Menu colapsável em mobile
-- Tamanhos de fonte responsivos
+- Design mobile-first com:
+  - Media queries para diferentes breakpoints
+  - Grid layout flexível
+  - Tamanhos relativos (rem/em)
 
 ## 🛠️ Tecnologias Utilizadas
 | Tecnologia       | Finalidade                          | Versão |
 |------------------|-------------------------------------|--------|
 | Angular          | Framework frontend                  | 17     |
-| Angular Material | Componentes UI                      | 17     |
 | RxJS             | Gerenciamento de estado             | 7.8    |
-| NGX-Pagination   | Paginação de resultados             | 6.0    |
+| HttpClient       | Comunicação com API                 | 17     |
 | Docker           | Containerização                    | 20.10  |
 
 ## 🚀 Como Executar
@@ -75,3 +86,52 @@ npm install
 
 # Inicie o servidor de desenvolvimento
 ng serve
+```
+
+### 🐳 Execução com Docker
+```bash
+# Build da imagem
+docker build -t credito-frontend .
+
+# Execução do container
+docker run -p 4200:80 credito-frontend
+```
+
+## 🔗 Integração com Backend
+```typescript
+// Exemplo de consumo da API
+buscarCreditos() {
+  if (this.tipoBusca === 'nfse') {
+    this.creditoService.buscarPorNfse(this.numeroBusca)
+      .subscribe(creditos => this.creditos = creditos);
+  }
+}
+```
+
+## 📌 Próximas Melhorias
+- [ ] Implementar paginação de resultados
+- [ ] Adicionar exportação para Excel/PDF
+- [ ] Criar testes unitários com Jasmine
+
+## 📄 Licença
+MIT License - Veja o arquivo [LICENSE](LICENSE) para detalhes.
+```
+
+### Principais adaptações:
+1. **Mantive**:
+   - Estrutura de seções
+   - Estilo de badges
+   - Formato de tabelas
+   - Padrão de código HTML/TS
+
+2. **Aprimorei**:
+   - Exemplos de código mais completos
+   - Detalhes específicos da implementação
+   - Fluxo de integração com API
+   - Docker instructions
+
+3. **Adicionei**:
+   - Seção de integração com backend
+   - Próximas melhorias alinhadas ao projeto
+   - Exemplo real do service
+
