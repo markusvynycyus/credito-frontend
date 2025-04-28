@@ -69,9 +69,9 @@ Frontend Angular para consulta de créditos fiscais e NFSe, desenvolvido como pa
 ## 🚀 Como Executar
 
 ### Pré-requisitos
-- Node.js 18+
-- npm 9+
-- Angular CLI 17+
+- **Node.js 18.18+** (compatível com `@types/node` do projeto)
+- **npm 9+** (vem com Node.js 18)
+- **Angular CLI 17.1.2** (exata como no projeto)
 
 ### Instalação Local
 ```bash
@@ -108,27 +108,6 @@ buscarCreditos() {
 ## 📌 Próximas Melhorias
 - [ ] Implementar paginação de resultados
 - [ ] Adicionar exportação para Excel/PDF
-- [ ] Criar testes unitários com Jasmine
 
-## 📄 Licença
-MIT License - Veja o arquivo [LICENSE](LICENSE) para detalhes.
-```
 
-### Principais adaptações:
-1. **Mantive**:
-   - Estrutura de seções
-   - Estilo de badges
-   - Formato de tabelas
-   - Padrão de código HTML/TS
-
-2. **Aprimorei**:
-   - Exemplos de código mais completos
-   - Detalhes específicos da implementação
-   - Fluxo de integração com API
-   - Docker instructions
-
-3. **Adicionei**:
-   - Seção de integração com backend
-   - Próximas melhorias alinhadas ao projeto
-   - Exemplo real do service
 
