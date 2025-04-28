@@ -1,4 +1,4 @@
-# 💻 Frontend - Sistema de Consulta de Créditos/NFSe
+ # 💻 Frontend - Sistema de Consulta de Créditos/NFSe
 
 ![Angular](https://img.shields.io/badge/Angular-17-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -17,7 +17,7 @@ Frontend Angular para consulta de créditos fiscais e NFSe, desenvolvido como pa
         <option value="nfse">Número da NFS-e</option>
         <option value="credito">Número do Crédito</option>
      </select>
-```
+   ```
   - ✅ **Campo de Busca Dinâmico**  
   ```html
      <<input id="numeroBusca" 
